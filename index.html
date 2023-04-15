@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width"/>
+    <title>404</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Iceland">
+<style>
+body {
+    background: #000;
+    margin: 0px;
+    padding: 0px;
+    overflow: scrollable;
+}
+
+canvas {
+    width: 100vw;
+    display: block;
+    position: absolute;
+}
+
+.logo1 {;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo2 {
+    width: 35vw;   
+    -webkit-animation: spin-right 5s linear infinite normal;
+}
+@keyframes spin-right {
+    from {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.message-title {
+    position: relative;
+    text-align: center;
+    font-family: Iceland;
+    font-size: 3vw;
+    color: #40f5ff;
+}
+
+.message {
+    position: relative;
+    text-align: center;
+    font-family: Iceland;
+    font-size: 3.5vw;
+    color: #ffffff;
+}
+.strip {
+    color: #00ff00;
+}
+</style>
+</head>
+<body>
+<canvas id="blondebrunetteredhead"></canvas>
+    <header>
+        <div class="logo1">
+            <img class="logo2" src="srlogo.png">
+            <audio src="https://b.top4top.io/m_2061c9zh70.mp3"></audio>
+        </div>
+        <div class="message-title">            
+            <hr color="limegreen" width="30%">
+                <h1>Message from Arie-SR91</h1>
+            <hr color="limegreen" width="30%">
+        </div>
+    </header>
+    <center>
+        <div class="message">
+            <h2>
+                <span id="anim"></span>
+                <span id="shuffle"></span>
+            </h2>
+        </div>
+    </center>
+    <footer>
+        <div class="strip">
+            <marquee behavior="Alternate" direction="left" scrollamount="50">===========</marquee>
+            <font color="blue" href="https://ariesr91.github.io/html-bucin/bucin_01">script 01</font>
+            <marquee behavior="Alternate" direction="right" scrollamount="50">===========</marquee>
+        </div>
+    </footer>
+<script>
+var cnvs = document.getElementById('blondebrunetteredhead'); // Matrix
+var cntxt = cnvs.getContext('2d');
+var char = '田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑ॐ';
+char = char.split('');
+var font_size = 18;
+
+function resizeCanvas() {
+    cnvs.width = window.innerWidth;
+    setTimeout(function() {
+        cnvs.height = window.innerHeight;
+    }, 0);
+};
+window.onresize = resizeCanvas();
+resizeCanvas();
+
+var columns = cnvs.width/font_size;
+var drops = [];
+for(var x=0;x<columns;x++){
+    drops[x]=1;
+}
+
+function draw(){  
+    cntxt.fillStyle = 'rgba(0,0,0,0.05)';
+    cntxt.fillRect(0,0,cnvs.width,cnvs.height);
+    cntxt.fillStyle = '#ff000a';
+    cntxt.font = font_size + 'px helvetica';
+    for(var i=0;i<drops.length;i++){
+        var txt = char[Math.floor(Math.random()*char.length)];
+        cntxt.fillText(txt,i*font_size, drops[i]*font_size);    
+        if(drops[i]*font_size>cnvs.height&&Math.random()>0.975){
+            drops[i] = 0; // back to the top!   
+        }
+        drops[i]++;
+    }
+}
+setInterval(draw, 30);
+
+var $ = function(id) { // Shuffle
+    return document.getElementById(id);
+};
+var inc = 0;
+var out = 0;
+var str = 'Wellcome to my website enjoy everything';
+var t;
+var chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
+var anim = function() {
+    inc++;
+    if (inc % 7 === 0 && out < str.length) {
+        $('anim').appendChild(document.createTextNode(str[out]));
+        out++;
+    } else if (out >= str.length) {
+        $('shuffle').innerHTML = '';
+        removeInterval(t)
+    }
+    $('shuffle').innerHTML =
+    chars[Math.floor(Math.random() * chars.length)];
+};
+t = setInterval(anim, 30);
+$('anim').innerHTML = '';
+</script>
+</html>
