@@ -58,6 +58,8 @@ canvas {
 .list {
 	position: relative;
 	text-align: center;
+	font-family: Iceland;
+	font-size: 5vw;
     color: #00ff00;
 }
 </style>
@@ -67,7 +69,7 @@ canvas {
     <header>
         <div class="logo1">
             <img class="logo2" src="https://ariesr91.github.io/html-bucin/images/srlogo.png">
-            <audio src="https://b.top4top.io/m_2061c9zh70.mp3"></audio>
+            <audio src="https://ariesr91.github.io/html-bucin/music/seandainya.mp3" id="linkmp3" class="sembunyi"></audio>
         </div>
         <div class="message-title">            
             <hr color="limegreen" width="30%">
@@ -85,7 +87,11 @@ canvas {
     </center>
     <footer>
     	<div class="list">
-            <a href="https://ariesr91.github.io/html-bucin/bucin_01">script 01</a>
+    	<marquee behavior="Alternate" direction="left" scrollamount="50">===========</marquee>
+    	    <font color="white" size="5">Kumpulan script html bucin</font><br><br>
+            <a href="https://ariesr91.github.io/html-bucin/bucin_01">Sayang aku cuma mau bilang</a><br><br>
+            <a href="https://ariesr91.github.io/html-bucin/bucin_02">Jika benar aku ada dihatimu</a><br><br>
+            <marquee behavior="Alternate" direction="right" scrollamount="50">===========</marquee>
         </div>
     </footer>
 <script>
@@ -131,7 +137,7 @@ var $ = function(id) { // Shuffle
 };
 var inc = 0;
 var out = 0;
-var str = 'Wellcome to my website';
+var str = 'Wellcome to my website.';
 var t;
 var chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
 var anim = function() {
