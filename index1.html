@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width"/>
@@ -19,13 +19,12 @@ canvas {
     position: absolute;
 }
 
-.logo1 {;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.content{
+    font-family: Iceland;
 }
-.logo2 {
-    width: 35vw;   
+
+.gambar {
+    width: 165px;
     -webkit-animation: spin-right 5s linear infinite normal;
 }
 @keyframes spin-right {
@@ -40,11 +39,149 @@ canvas {
     }
 }
 
+.batth {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#battery {
+    height: 30px;
+    box-shadow: 0 -26px 0 -20px, 0 0 0 1px, 0 -10px 0 -7px #ffffff;
+    position: relative;
+    width: 20px;
+    border: 1px solid;
+    border-color: #ffffff;
+}
+
+#battery .flow {
+    background: limegreen;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;	
+    transition: 3s height;
+}
+
+#battery .flow.charging {
+    animation: charge 3s ease-in-out infinite;
+}
+
+@keyframes charge {
+    40% {
+        box-shadow: 0px -5px 0px 0px limegreen;
+    }
+}
+
+#battery .amount {
+    position: absolute;
+    top: 10px;
+    left: 2px;
+    font-size: 0.6em;
+    text-align: center;
+    color: white;
+    transition: 3s color;
+}
+
+.loader{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top:140px;
+    left:50%;   
+    transform:translate(-50%,-50%);
+    width:230px;
+    height:230px;
+    box-sizing:border-box;
+}
+.loader .face{
+    position: absolute;
+    border:1px solid #121212;
+}
+.loader .face.face1{
+   top:40px;
+   left:40px;
+   right:40px;
+   bottom:40px;
+   box-shadow:0 0 10px rgba(0,0,0,1);
+   border-radius:50%;
+   border-left:1px solid #fff000;
+   border-top:1px solid #fff000;
+   animation:animate 3s linear infinite;
+}
+.loader .face.face2{
+   top:50px;
+   left: 50px;
+   right:50px;
+   bottom:50px;
+   box-shadow:0 0 10px rgba(0,0,0,1);
+   border-radius:50%;
+   border-right:1px solid #03a9f4;
+   border-bottom:1px solid #03a9f4;
+   animation:animate 3s linear reverse infinite;
+   }
+.loader .face .circ{
+  position: absolute;
+  top:calc(50% - 1px);
+  left:50%;
+  width:47%;
+  transform-origin:left;
+   
+}
+.loader .face.face1 .circ{
+  transform:rotate(-45deg);
+}
+.loader .face.face2 .circ{
+  transform:rotate(-45deg);
+}
+
+.loader .face .circ:before{
+  content:"";
+  position:absolute;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  transform-orgin:left;
+  top:-8px;
+  right:-9px;
+ 
+}
+.loader .face.face1 .circ:before{
+    content:"";
+    background-color:#fff000;
+    box-shadow:0 0 20px #fff000,
+               0 0 40px #fff000,
+               0 0 60px #fff000,
+               0 0 80px #fff000,
+               0 0 100px #fff000,
+               0 0 0 5px rgba(255,255,0,.1);
+}
+.loader .face.face2 .circ:before{
+   content:"";
+ background-color:#03a9f4;
+  box-shadow:0 0 20px #03a9f4,
+             0 0 40px #03a9f4,
+             0 0 60px #03a9f4,
+             0 0 80px #03a9f4,
+             0 0 100px #03a9f4,
+             0 0 0 5px rgba(0,255,255,.1);;
+}
+@keyframes  animate {
+  0% {
+    transform:rotate(0deg);
+  }
+   100% {
+    transform:rotate(360deg);
+  }
+}
+
 .message-title {
     position: relative;
     text-align: center;
     font-family: Iceland;
-    font-size: 3vw;
+    font-size: 12px;
     color: #40f5ff;
 }
 
@@ -52,50 +189,253 @@ canvas {
     position: relative;
     text-align: center;
     font-family: Iceland;
-    font-size: 3.5vw;
+    font-size: 12px;
     color: #ffffff;
 }
-.list {
-	position: relative;
-	text-align: center;
-	font-family: Iceland;
-	font-size: 5vw;
-    color: #00ff00;
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+}
+.box .glitch {
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  position: relative;
+  padding: 30px;
+}
+.box .glitch:before, .box .glitch:after {
+  content: attr(data-text);
+  width: 197px;
+  color: #fff;
+  position: absolute;
+  top: 0px;
+  overflow: hidden;
+  padding: 30px;
+}
+.box .glitch:before {
+  left: 3px;
+  text-shadow: -3px 0 red;
+  animation: glitch-before 2s linear 0s infinite alternate;
+}
+.box .glitch:after {
+  left: -3px;
+  text-shadow: -3px 0 blue;
+  animation: glitch-after 2s linear 0s infinite alternate;
+}
+
+@keyframes glitch-before {
+  0% {
+    clip: rect(95px, 350px, 128px, 30px);
+  }
+  5% {
+    clip: rect(82px, 350px, 78px, 30px);
+  }
+  10% {
+    clip: rect(63px, 350px, 67px, 30px);
+  }
+  15% {
+    clip: rect(107px, 350px, 33px, 30px);
+  }
+  20% {
+    clip: rect(20px, 350px, 130px, 30px);
+  }
+  25% {
+    clip: rect(89px, 350px, 24px, 30px);
+  }
+  30% {
+    clip: rect(109px, 350px, 95px, 30px);
+  }
+  35% {
+    clip: rect(68px, 350px, 3px, 30px);
+  }
+  40% {
+    clip: rect(135px, 350px, 121px, 30px);
+  }
+  45% {
+    clip: rect(147px, 350px, 49px, 30px);
+  }
+  50% {
+    clip: rect(116px, 350px, 86px, 30px);
+  }
+  55% {
+    clip: rect(18px, 350px, 56px, 30px);
+  }
+  60% {
+    clip: rect(124px, 350px, 8px, 30px);
+  }
+  65% {
+    clip: rect(7px, 350px, 148px, 30px);
+  }
+  70% {
+    clip: rect(41px, 350px, 56px, 30px);
+  }
+  75% {
+    clip: rect(47px, 350px, 78px, 30px);
+  }
+  80% {
+    clip: rect(92px, 350px, 117px, 30px);
+  }
+  85% {
+    clip: rect(19px, 350px, 138px, 30px);
+  }
+  90% {
+    clip: rect(11px, 350px, 51px, 30px);
+  }
+  95% {
+    clip: rect(118px, 350px, 26px, 30px);
+  }
+  100% {
+    clip: rect(115px, 350px, 48px, 30px);
+  }
+}
+@keyframes glitch-after {
+  0% {
+    clip: rect(32px, 350px, 119px, 30px);
+  }
+  5% {
+    clip: rect(128px, 350px, 48px, 30px);
+  }
+  10% {
+    clip: rect(91px, 350px, 34px, 30px);
+  }
+  15% {
+    clip: rect(127px, 350px, 31px, 30px);
+  }
+  20% {
+    clip: rect(92px, 350px, 148px, 30px);
+  }
+  25% {
+    clip: rect(22px, 350px, 61px, 30px);
+  }
+  30% {
+    clip: rect(149px, 350px, 139px, 30px);
+  }
+  35% {
+    clip: rect(140px, 350px, 103px, 30px);
+  }
+  40% {
+    clip: rect(105px, 350px, 128px, 30px);
+  }
+  45% {
+    clip: rect(38px, 350px, 30px, 30px);
+  }
+  50% {
+    clip: rect(49px, 350px, 111px, 30px);
+  }
+  55% {
+    clip: rect(112px, 350px, 15px, 30px);
+  }
+  60% {
+    clip: rect(93px, 350px, 117px, 30px);
+  }
+  65% {
+    clip: rect(67px, 350px, 117px, 30px);
+  }
+  70% {
+    clip: rect(75px, 350px, 72px, 30px);
+  }
+  75% {
+    clip: rect(50px, 350px, 39px, 30px);
+  }
+  80% {
+    clip: rect(84px, 350px, 64px, 30px);
+  }
+  85% {
+    clip: rect(45px, 350px, 129px, 30px);
+  }
+  90% {
+    clip: rect(85px, 350px, 15px, 30px);
+  }
+  95% {
+    clip: rect(41px, 350px, 110px, 30px);
+  }
+  100% {
+    clip: rect(33px, 350px, 103px, 30px);
+  }
 }
 </style>
 </head>
 <body>
-<canvas id="blondebrunetteredhead"></canvas>
-    <header>
-        <div class="logo1">
-            <img class="logo2" src="https://ariesr91.github.io/html-bucin/images/srlogo.png">
-            <audio src="https://ariesr91.github.io/html-bucin/music/seandainya.mp3" id="linkmp3" class="sembunyi"></audio>
+<canvas id="matrix"></canvas>
+    <div class="content">
+        <div class="batth">
+            <div id="battery">
+                <span class="flow" style="height: 50%;"></span>
+                <span class="amount">50%</span>
+            </div>
         </div>
-        <div class="message-title">            
-            <hr color="limegreen" width="30%">
-                <h1>Message from Arie-SR91</h1>
-            <hr color="limegreen" width="30%">
+        <div class="loader">
+            <div class="face face1">
+                <div class="circ">
+                </div>
+            </div>
+            <img class="gambar" src="https://i.ibb.co/tLHmwrZ/RCA-Duty-Red-Cyber-Army.png">
+            <div class="face face2">
+                <div class="circ">
+                </div>
+            </div>
         </div>
-    </header>
-    <center>
+        <div class="message-title">
+            <audio autoplay="autoplay" src="https://b.top4top.io/m_2061c9zh70.mp3" type="audio/mpeg"></audio>
+            <h1 style="color: white;">Hacked by
+                <a style="text-decoration: none; color: cyan;" href="">Arie-SR91</a>
+            </h1>
+            <hr color="red" width="80px">
+        </div>
+        <marquee behavior="Alternate" direction="right" scrollamount="10">
+            <font style="color: yellow; font-size: 10px;">
+                SECURITY WARNING!!!
+            </font>
+        </marquee>
         <div class="message">
+            <hr color="red" width="80px">
+            <font size="4px" color="lightgreen">Mesage:</font>
             <h2>
-                <span id="anim"></span>
-                <span id="shuffle"></span>
+                <span id="anim"></span><span id="shuffle"></span>
             </h2>
+            <hr color="cyan" width="200px">	
+            <div class="box">
+                <h1 class="glitch" data-text="Red Cyber Army">Red Cyber Army</h1>
+            </div>
+            <hr color="cyan" width="200px">	
+            <h3>
+                <font color="yellow">
+                    ★★★★★★
+                </font>
+                <br>
+                <font color="blue">
+                    Greets:
+                </font>
+                <marquee behavior="Alternate" direction="right" scrollamount="30">
+                    <font color="yellow">                        
+                        <⟨————————⟨⟨⟨
+                    </font>
+                </marquee>
+                <br>
+                <font color="red">
+                    ANONYMOUS
+                </font>
+                <br>
+                <font color="white">
+                    INDONESIA
+                </font>
+                <br>
+                <marquee behavior="Alternate" direction="left" scrollamount="30">
+                    <font color="yellow">
+                        ⟩⟩⟩————————⟩>
+                    </font>
+                </marquee>
+            </h3>
         </div>
-    </center>
-    <footer>
-    	<div class="list">
-    	<marquee behavior="Alternate" direction="left" scrollamount="50">===========</marquee>
-    	    <font color="white" size="5">Kumpulan script html bucin</font><br><br>
-            <a href="https://ariesr91.github.io/html-bucin/bucin_01">Sayang aku cuma mau bilang</a><br><br>
-            <a href="https://ariesr91.github.io/html-bucin/bucin_02">Jika benar aku ada dihatimu</a><br><br>
-            <marquee behavior="Alternate" direction="right" scrollamount="50">===========</marquee>
-        </div>
-    </footer>
+    </div>
+</body>
 <script>
-var cnvs = document.getElementById('blondebrunetteredhead'); // Matrix
+/* Matrix */
+var cnvs = document.getElementById('matrix');
 var cntxt = cnvs.getContext('2d');
 var char = '田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑ॐ';
 char = char.split('');
@@ -132,27 +472,52 @@ function draw(){
 }
 setInterval(draw, 30);
 
-var $ = function(id) { // Shuffle
-    return document.getElementById(id);
+/* Battery */
+try {
+    navigator.getBattery().then(battery => {
+        changeBattery(battery.level, battery.charging);
+        battery.onlevelchange = () => changeBattery(battery.level, battery.charging);
+        battery.onchargingchange = () => changeBattery(battery.level, battery.charging);
+    });
+} 
+catch(e) {
+    console.warn('Your browser does not support getting battery info!');
+}
+function changeBattery(percentage, charging) {
+    percentage = (percentage * 100).toFixed() + '%';
+    document.querySelector('.flow').style.height = percentage;
+    document.querySelector('.amount').innerHTML = percentage;
+    let color = null;
+    if (percentage <= 10) color = 'red';
+    else if (percentage <= 20) color = 'orange';
+    document.querySelector('.flow').style.backgroundColor = color;
+    document.querySelector('.amount').style.color = color;
+    if (charging) document.querySelector('.flow').classList.add('charging');
+    else document.querySelector('.flow').classList.remove('charging');
+}
+
+/* Typing */
+var typingShuffle = function(id) {
+  return document.getElementById(id);
 };
 var inc = 0;
 var out = 0;
-var str = 'Wellcome to my website.';
+var str = "You have been hacked by me";
+var chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz';
 var t;
-var chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
 var anim = function() {
     inc++;
     if (inc % 7 === 0 && out < str.length) {
-        $('anim').appendChild(document.createTextNode(str[out]));
+        typingShuffle('anim').appendChild(document.createTextNode(str[out]));
         out++;
     } else if (out >= str.length) {
-        $('shuffle').innerHTML = '';
-        removeInterval(t)
+        typingShuffle('shuffle').innerHTML = '';
+        removeInterval(t);
     }
-    $('shuffle').innerHTML =
+    typingShuffle('shuffle').innerHTML =
     chars[Math.floor(Math.random() * chars.length)];
 };
 t = setInterval(anim, 30);
-$('anim').innerHTML = '';
+typingShuffle('anim').innerHTML = '';
 </script>
 </html>

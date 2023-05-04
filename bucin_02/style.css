@@ -2,14 +2,88 @@
 --gaya-font: 'Nunito Sans', sans-serif;
 --gaya-font3: 'Nerko One', cursive;
 }
-@keyframes fanim {0% {background-position: 0% 0%;}25% {background-position: 100% 100%;} 50% {background-position: 0% 100%;} 75% {background-position: 50% 50%;} 100% {background-position: 0% 0%;}}
-body{background-color:#000;font-family:var(--gaya-font);padding: 20px 25px;-webkit-user-select: none; -ms-user-select: none; user-select: none;} a{text-decoration:none;}
-body::before{content:"\00A9  Rayys | PalingIT";color:white;opacity:.05;font-size:10px;position:fixed;bottom:25px;right:25px;z-index:2}
-#bodyblur{opacity:.3;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);transition:all 1s ease;} 
-#wallpaper{width:100%;height:100%;transform: scale(2);transition:all 1.7s ease;}
-#beneranblur{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);-webkit-backdrop-filter:blur(0px); backdrop-filter:blur(0px);transition:all 3s ease;}
+@keyframes fanim {
+    0% {
+        background-position: 0% 0%;
+    }
+    25% {
+        background-position: 100% 100%;
+    }
+    50% {
+        background-position: 0% 100%;
+    }
+    75% {
+        background-position: 50% 50%;
+    }
+    100% {background-position: 0% 0%;
+    }
+}
 
-@keyframes jj{0%  {transform: scale(1.1);} 50% {transform: scale(1.2);} 100% {transform: scale(1.1);}}
+body{
+    background-color:#000;
+    font-family:var(--gaya-font);
+    padding: 20px 25px;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+a{
+text-decoration:none;
+}
+body::before{
+    content:"\00A9  Rayys | PalingIT";
+    color:white;
+    opacity:.05;
+    font-size:10px;
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    z-index:2
+}
+
+#bodyblur{
+    opacity:.3;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(0,0,0,.3);
+    transition:all 1s ease;
+}
+
+#wallpaper{
+    width:100%;
+    height:100%;
+    transform: scale(2);
+    transition:all 1.7s ease;
+
+}
+
+#beneranblur{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(0,0,0,.3);
+    -webkit-backdrop-filter:blur(0px);
+    backdrop-filter:blur(0px);
+    transition:all 3s ease;
+}
+
+@keyframes jj{
+    0%  {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
 @keyframes rts{from {transform:scale(.1);} to {transform:scale(1);}}
 @keyframes rto{from {transform:scale(1);} to {transform:scale(1.1);}}
 @keyframes aniopa{0% {transform: scale(1);} 50% {transform: scale(.75);} 100% {transform: scale(1);}}
@@ -19,7 +93,7 @@ body::before{content:"\00A9  Rayys | PalingIT";color:white;opacity:.05;font-size
 blockquote{position:absolute;opacity:0;visibility:hidden;/*background:var(--warna-bg);border: 1px solid rgba(255, 255, 255, 0.5);border-radius:10px;box-shadow: rgba(255,255,255, 0.3) 0px 7px 29px 0px;*/transform: scale(.1);transition:all .3s ease;margin-left:0;margin-right:0;color:#fff;text-shadow: 0px 2px 2px rgba(0, 0, 0, .8);/*backdrop-filter:blur(2px);*/}
 blockquote{width:400px;text-align:left;line-height:1.3em;padding:0}
 /*blockquote::before{content:attr(data-text);opacity:.7;font-family: sans-serif;position:absolute;left:8px;top:8px;min-width:15px;font-size:16px;text-align:center}*/
-blockquote p{font-size:15px;font-weight:400;line-height:1.5em;transition:all .5s ease;margin-left:40px;margin-right:40px}
+blockquote p{font-height:1.5em;transition:all .5s ease;margin-left:40px;margin-right:40px}
 blockquote > .gaya4{margin-top:15px;font-family:var(--gaya-font3);font-size:16px !important;font-weight:400;color:#FF3E34}
 blockquote > .gaya3{font-size:17px;font-weight:700;text-align:center}
 blockquote > .gaya2{font-size:15px;font-weight:400}
