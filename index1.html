@@ -192,171 +192,6 @@ canvas {
     font-size: 12px;
     color: #ffffff;
 }
-
-.box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20px;
-}
-.box .glitch {
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: 30px;
-  position: relative;
-  padding: 30px;
-}
-.box .glitch:before, .box .glitch:after {
-  content: attr(data-text);
-  width: 197px;
-  color: #fff;
-  position: absolute;
-  top: 0px;
-  overflow: hidden;
-  padding: 30px;
-}
-.box .glitch:before {
-  left: 3px;
-  text-shadow: -3px 0 red;
-  animation: glitch-before 2s linear 0s infinite alternate;
-}
-.box .glitch:after {
-  left: -3px;
-  text-shadow: -3px 0 blue;
-  animation: glitch-after 2s linear 0s infinite alternate;
-}
-
-@keyframes glitch-before {
-  0% {
-    clip: rect(95px, 350px, 128px, 30px);
-  }
-  5% {
-    clip: rect(82px, 350px, 78px, 30px);
-  }
-  10% {
-    clip: rect(63px, 350px, 67px, 30px);
-  }
-  15% {
-    clip: rect(107px, 350px, 33px, 30px);
-  }
-  20% {
-    clip: rect(20px, 350px, 130px, 30px);
-  }
-  25% {
-    clip: rect(89px, 350px, 24px, 30px);
-  }
-  30% {
-    clip: rect(109px, 350px, 95px, 30px);
-  }
-  35% {
-    clip: rect(68px, 350px, 3px, 30px);
-  }
-  40% {
-    clip: rect(135px, 350px, 121px, 30px);
-  }
-  45% {
-    clip: rect(147px, 350px, 49px, 30px);
-  }
-  50% {
-    clip: rect(116px, 350px, 86px, 30px);
-  }
-  55% {
-    clip: rect(18px, 350px, 56px, 30px);
-  }
-  60% {
-    clip: rect(124px, 350px, 8px, 30px);
-  }
-  65% {
-    clip: rect(7px, 350px, 148px, 30px);
-  }
-  70% {
-    clip: rect(41px, 350px, 56px, 30px);
-  }
-  75% {
-    clip: rect(47px, 350px, 78px, 30px);
-  }
-  80% {
-    clip: rect(92px, 350px, 117px, 30px);
-  }
-  85% {
-    clip: rect(19px, 350px, 138px, 30px);
-  }
-  90% {
-    clip: rect(11px, 350px, 51px, 30px);
-  }
-  95% {
-    clip: rect(118px, 350px, 26px, 30px);
-  }
-  100% {
-    clip: rect(115px, 350px, 48px, 30px);
-  }
-}
-@keyframes glitch-after {
-  0% {
-    clip: rect(32px, 350px, 119px, 30px);
-  }
-  5% {
-    clip: rect(128px, 350px, 48px, 30px);
-  }
-  10% {
-    clip: rect(91px, 350px, 34px, 30px);
-  }
-  15% {
-    clip: rect(127px, 350px, 31px, 30px);
-  }
-  20% {
-    clip: rect(92px, 350px, 148px, 30px);
-  }
-  25% {
-    clip: rect(22px, 350px, 61px, 30px);
-  }
-  30% {
-    clip: rect(149px, 350px, 139px, 30px);
-  }
-  35% {
-    clip: rect(140px, 350px, 103px, 30px);
-  }
-  40% {
-    clip: rect(105px, 350px, 128px, 30px);
-  }
-  45% {
-    clip: rect(38px, 350px, 30px, 30px);
-  }
-  50% {
-    clip: rect(49px, 350px, 111px, 30px);
-  }
-  55% {
-    clip: rect(112px, 350px, 15px, 30px);
-  }
-  60% {
-    clip: rect(93px, 350px, 117px, 30px);
-  }
-  65% {
-    clip: rect(67px, 350px, 117px, 30px);
-  }
-  70% {
-    clip: rect(75px, 350px, 72px, 30px);
-  }
-  75% {
-    clip: rect(50px, 350px, 39px, 30px);
-  }
-  80% {
-    clip: rect(84px, 350px, 64px, 30px);
-  }
-  85% {
-    clip: rect(45px, 350px, 129px, 30px);
-  }
-  90% {
-    clip: rect(85px, 350px, 15px, 30px);
-  }
-  95% {
-    clip: rect(41px, 350px, 110px, 30px);
-  }
-  100% {
-    clip: rect(33px, 350px, 103px, 30px);
-  }
-}
 </style>
 </head>
 <body>
@@ -384,51 +219,21 @@ canvas {
             <h1 style="color: white;">Hacked by
                 <a style="text-decoration: none; color: cyan;" href="">Arie-SR91</a>
             </h1>
-            <hr color="red" width="80px">
+            <hr color="cyan" width="200px">
         </div>
-        <marquee behavior="Alternate" direction="right" scrollamount="10">
-            <font style="color: yellow; font-size: 10px;">
-                SECURITY WARNING!!!
-            </font>
-        </marquee>
         <div class="message">
-            <hr color="red" width="80px">
             <font size="4px" color="lightgreen">Mesage:</font>
             <h2>
                 <span id="anim"></span><span id="shuffle"></span>
             </h2>
-            <hr color="cyan" width="200px">	
-            <div class="box">
-                <h1 class="glitch" data-text="Red Cyber Army">Red Cyber Army</h1>
-            </div>
-            <hr color="cyan" width="200px">	
+            <hr color="cyan" width="200px">
             <h3>
-                <font color="yellow">
-                    ★★★★★★
-                </font>
-                <br>
-                <font color="blue">
-                    Greets:
-                </font>
-                <marquee behavior="Alternate" direction="right" scrollamount="30">
-                    <font color="yellow">                        
-                        <⟨————————⟨⟨⟨
-                    </font>
-                </marquee>
-                <br>
-                <font color="red">
-                    ANONYMOUS
-                </font>
-                <br>
-                <font color="white">
-                    INDONESIA
-                </font>
-                <br>
-                <marquee behavior="Alternate" direction="left" scrollamount="30">
-                    <font color="yellow">
-                        ⟩⟩⟩————————⟩>
-                    </font>
-                </marquee>
+                <font color="yellow">★★★★★★</font>
+                <br><br>
+                <font color="blue">WE ARE:</font>
+                <br><br>
+                <font color="red">A N O N Y M O U S</font><br>
+                <font color="white">I N D O N E S I A</font>
             </h3>
         </div>
     </div>
